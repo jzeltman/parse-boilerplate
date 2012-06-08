@@ -1,0 +1,225 @@
+/* =======================================================
+	Utilities
+======================================================= */
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+.f_left { float: left; }
+.f_right { float: right; }
+
+
+/* =======================================================
+	Modals
+======================================================= */
+body.modal { overflow: hidden; }
+
+	body.modal .modal-coverall,
+	body.modal .modal-container { display: block; }
+
+.modal-coverall {
+	background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.65) 0%, rgba(0,0,0,.85) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,.85))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,.85) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,.85) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,.85) 100%); /* IE10+ */
+	background: radial-gradient(center, ellipse cover,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,.85) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 999999999;
+	display: none;
+}
+
+.modal-container {
+	position: absolute;
+	top: -1000px;
+	left: 30%;
+	right: 30%;
+	min-width: 300px;
+	padding: 20px;
+	background: #CCC;
+	height: auto;
+	border: 1px solid #EEE;
+	z-index: 9999999999;
+	
+	-webkit-transition: top .5s linear;
+	   -moz-transition: top .5s linear;
+			transition: top .5s linear;
+	-webkit-border-radius: 0 0 5px 5px;
+	   -moz-border-radius: 0 0 5px 5px;
+			border-radius: 0 0 5px 5px;
+	-webkit-box-shadow: 0 0 5px #000;
+	   -moz-box-shadow: 0 0 5px #000;
+			box-shadow: 0 0 5px #000;
+}
+
+	body.modal .modal-container { top: -1px; }
+
+.modal-container .icon-remove { 
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 6px 12px;
+	font-size: 16px;
+	color: #333;
+	text-shadow: 0 1px 0 #FFF;
+	border-bottom: 1px solid #DDD;
+	border-left: 1px solid #DDD;
+	-webkit-border-radius: 0 0 0 5px;
+	   -moz-border-radius: 0 0 0 5px;
+			border-radius: 0 0 0 5px;
+	
+}
+
+	.modal-container .icon-remove:hover {
+		cursor: pointer;
+		color: #000;
+		background: #DDD;
+		border-color: #FFF;
+	}
+	
+.modal-container .f_left { width: 69%; }
+.modal-container .f_right { width: 29%; }
+
+	.modal-container input[type=text],
+	.modal-container input[type=submit] {
+		margin: 0 0 10px;
+		padding: 5px 7px;
+		width: 95%;
+	}
+	
+		.modal-container input[type=email] + .modal-container input[type=password] {
+			margin-left: 20px;
+		}
+	
+	.modal-container input[type=submit] {
+		padding: 7px;
+	}
+
+	.modal-container input[type=email],
+	.modal-container input[type=password] {
+		float: left;
+		border-top: 1px solid #666;
+		border-right: 1px solid #666;
+		border-bottom: 1px solid #666;
+		padding: 5px 7px;
+		margin: 0 0 10px;
+		border-radius: 0 3px 3px 0;
+	}
+	
+	.modal-container .f_left i {
+		float: left;
+		background: #999;
+		padding-top: 5px;
+		width: 30px;
+		height: 26px;
+		text-align: center;
+		color: #FFF;
+		border-top: 1px solid #666;
+		border-bottom: 1px solid #666;
+		border-left: 1px solid #666;
+		border-radius: 3px 0 0 3px;
+	}
+	
+		.modal-container .f_left i.icon-key { clear: left; }
+		
+		
+/* =======================================================
+	Main Menu
+======================================================= */	
+#menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 40px;
+	background: #EEE;
+	border-bottom: 3px double #CCC;
+}
+
+	#app-menu {
+		position: absolute;
+		left: 350px;
+		right: 0;
+		height: 40px;
+	}
+	
+		#app-menu ul {
+			margin: 1px 10px 0 0;
+			padding: 0;
+			float: right;
+		}
+		
+			#app-menu > ul > li {
+				display: block;
+				width: 37px;
+				height: 35px;
+				border: 1px solid #FFF;
+				border-radius: 3px;
+				float: right;
+				margin-left: 10px;
+				position: relative;
+			}
+			
+				#app-menu ul li > i { margin: 6px 0 0 7px; }
+	
+	
+				#app-menu ul li:hover { cursor: pointer; }
+	
+	#app-menu .dropdown {
+		width: auto;
+		display: none;
+		float: none; 
+		background: #CCC;
+		position: absolute;
+		top: 45px;
+		right: 7px;
+		border: 1px solid #666;
+	}
+	
+		#app-menu .dropdown.open { display: block; }
+	
+		#app-menu .dropdown:before,
+		#app-menu .dropdown:after {
+			content: "";
+			position: absolute;
+			top: -15px;
+			right: -1px;
+			border-top: 15px solid transparent;
+			border-right: 15px solid #666;
+			border-left: 15px solid transparent;
+		}
+		
+		#app-menu .dropdown:after { 
+			content: "";
+			position: absolute;
+			top: -12px;
+			right: 0;
+			border-top: 13px solid transparent;
+			border-right: 13px solid #CCC;
+			border-left: 13px solid transparent;
+		}
+	
+	#app-menu .dropdown > li {
+		min-width: 250px;
+		display: block;
+		float: none;
+		padding: 5px 10px;
+		border-top: 1px solid #FFF;
+		border-bottom: 1px solid #666;	
+	}
+	
+		#app-menu .dropdown > li:hover {
+			background: #EEE;
+		}
+
+
+#logo {
+	font-size: 24px;
+	float: left;
+	margin: 7px 0 0 9px;
+}
